@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地基及结构检测管理系统</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <a class="brand" href="#/home" aria-label="地基及结构检测管理系统首页">
+        <span class="brand-mark">基</span>
+        <span>地基及结构检测管理系统</span>
+      </a>
+      <nav id="topNav" class="top-nav" aria-label="一级导航"></nav>
+      <div class="user-tools">
+        <button class="icon-btn" data-action="notify" title="消息通知">🔔<span class="dot"></span></button>
+        <span class="top-divider"></span>
+        <div class="user-menu">
+          <span class="avatar">管</span>
+          <span id="currentUserName">系统管理员</span>
+          <span class="chevron">⌄</span>
+          <div class="user-dropdown">
+            <button data-action="switch-role">切换模拟角色</button>
+            <button data-action="logout">退出登录</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <aside id="sidebar" class="sidebar"></aside>
+    <main id="main" class="main-content" tabindex="-1">
+      <div id="pageView"></div>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+  <script src="assets/js/dictionary.js"></script>
+  <script src="assets/js/mock.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

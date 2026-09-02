@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录 - 地基及结构检测管理系统</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body class="login-body">
+  <div class="login-scene" aria-hidden="true">
+    <div class="sky-orb"></div>
+    <div class="cityline cityline-back"></div>
+    <div class="cityline cityline-front"></div>
+    <div class="bridge"></div>
+    <div class="mist"></div>
+  </div>
+  <section class="login-card">
+    <div class="login-heading">
+      <span class="brand-mark large">基</span>
+      <div>
+        <h1>地基及结构检测管理系统</h1>
+        <p>FOUNDATION & STRUCTURE INSPECTION</p>
+      </div>
+    </div>
+    <form id="loginForm" novalidate>
+      <label class="login-field"><span>👤</span><input id="username" value="admin" autocomplete="username" placeholder="请输入用户名"></label>
+      <label class="login-field"><span>🔒</span><input id="password" type="password" value="123456" autocomplete="current-password" placeholder="请输入密码"></label>
+      <div class="login-options"><label><input type="checkbox" checked> 记住密码</label><a href="javascript:void(0)">忘记密码？</a></div>
+      <p id="loginError" class="login-error"></p>
+      <button class="btn btn-primary btn-login" type="submit">登 录</button>
+    </form>
+    <div class="account-hint">测试账号：admin / manager / tester　密码均为 123456</div>
+  </section>
+  <footer class="login-footer">© 2026 地基及结构检测管理系统 · 技术支持中心</footer>
+  <script>
+    const accounts = {admin:'系统管理员',manager:'检测负责人',tester:'检测人员'};
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const u=document.getElementById('username').value.trim();
+      const p=document.getElementById('password').value;
+      if(accounts[u] && p==='123456'){
+        localStorage.setItem('fdi_user', JSON.stringify({username:u,name:accounts[u]}));
+        location.href='index.html#/home';
+      }else document.getElementById('loginError').textContent='用户名或密码错误，请使用页面下方测试账号。';
+    });
+  </script>
+</body>
+</html>
