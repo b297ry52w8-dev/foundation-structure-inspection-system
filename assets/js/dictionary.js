@@ -14,7 +14,7 @@ window.DICT = {
   sampleType:['委托方','见证方','检测方'],
   taskStatus:['待派发','待检测','检测中','检毕','已取消'],
   taskApproval:['待发起','审核中','已驳回','审核通过'],
-  reportStatus:['编制中','已完成','已作废'],
+  reportStatus:['编制中','已完成'],
   reportApproval:['待发起','审核中','已驳回','审核通过']
 };
 
